@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: rgb(109, 117, 123);
+  padding: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(228, 232, 234);
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+ 
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 5%;
+  height: 500px; /* only for demonstration, should be removed */
+  background: rgb(53, 56, 58);
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article { 
+   float: left; 
+  padding: 20px;
+  width:95%; 
+  background-color: #f1f1f1; 
+   height: 500px; 
+} 
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+ 
+}
+
+/* Style the footer */
+footer {
+  background-color: rgb(109, 117, 123);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: relative;
+  bottom: 0;
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  height: 3cm;
+  width: 7cm;
+  position: relative;
+  top: 150px;
+  left: 350px;
+  z-index: 2;
+  box-sizing: border-box;
+  line-height: 80px
+  
+ 
+}
+
+
+
+.button1 {border-radius: 12px;}
+.button2 {border-radius: 12px;}
+.button3 {border-radius: 12px;}
+
+
+.button1 {
+  background-color: rgb(12, 11, 11);
+  color: rgb(242, 232, 232);
+  border: 2px solid #0f0453; /* Green */
+  z-index: inherit;
+  text-align: center;
+  vertical-align: middle;
+}
+.button2 {
+
+  background-color: rgb(13, 13, 13);
+  color: rgb(235, 227, 227);
+  border: 2px solid #0f0453; /* Green */
+  z-index: inherit;
+  text-align: center;  
+  
+}
+.button3 {
+
+background-color: rgb(13, 13, 13);
+color: rgb(235, 227, 227);
+border: 2px solid #0f0453; /* Green */
+z-index: inherit;
+text-align: center;  
+
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #0b75aa; /* Blue */
+  color: white;
+}
+
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- <h2>CSS Layout Float</h2> -->
+<!-- <p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
+<p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)</p> -->
+
+<header>
+  <h2>FIRST INFORMATION REPORT</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <!-- <li><a href="#">London</a></li>
+      <li><a href="#">Paris</a></li>
+      <li><a href="#">Tokyo</a></li> -->
+    </ul>
+  </nav>
+  
+  <article>
+    <!-- <h1>London</h1>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p> -->
+    <a  type=button href="/pastrec" class="button button1">PAST RECORDS</a>
+    <a  type=button href="/firform"  class="button button2">FILE AN FIR</a>
+    <a  type=button href="/firview"  class="button button3">VIEW FIR</a>
+  </article>
+</section>
+
+<footer>
+  <p>IP</p>
+</footer>
+
+</body>
+</html>

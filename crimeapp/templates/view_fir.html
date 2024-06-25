@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View FIRs</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .fir-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #f9f9f9;
+      margin-bottom: 20px;
+    }
+
+    .fir-table th,
+    .fir-table td {
+      padding: 12px 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .fir-table th {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .fir-table tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">FIR List</h1>
+    <table class="fir-table">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Age</th>
+          <th>Occupation</th>
+          <th>Residence</th>
+          <th>Case Description</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Location</th>
+          <th>Type of Crime</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for fir in fir %}
+        <tr>
+          <td>{{ fir.fname }}</td>
+          <td>{{ fir.age }}</td>
+          <td>{{ fir.occupation }}</td>
+          <td>{{ fir.residence }}</td>
+          <td>{{ fir.casedes }}</td>
+          <td>{{ fir.date }}</td>
+          <td>{{ fir.time }}</td>
+          <td>{{ fir.location }}</td>
+          <td>{{ fir.typeofcrime }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

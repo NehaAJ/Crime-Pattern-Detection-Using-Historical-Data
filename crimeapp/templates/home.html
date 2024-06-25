@@ -1,0 +1,453 @@
+
+    <!-- <h1>WELCOME</h1>
+    <a href="/logout">Logout</a>
+    <a href="/profile">Profile</a> -->
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    {% load widget_tweaks %}
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: #d3d8ef;
+}
+
+.wrapper .sidebar{
+    background: rgb(53, 56, 58);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #10558d;
+    border-top: 2px solid #10558d;
+    border-left: 2px solid #10558d;
+    border-right: 2px solid #10558d;
+    border-radius: 0.5cm;
+    margin-bottom: 0.25cm;
+    color: rgb(252, 248, 248);
+    font-size: 16px;
+    position: relative;
+    
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: #0c7db1;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: rgb(109, 117, 123);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 15px 18px;
+    position: relative;
+    top: 0px;;
+    left: 0px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #a2ecff;
+}
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+
+.icone{
+    position: fixed;
+    top: 0.2cm;
+    left:5cm;
+    color: #dee4ec;
+
+}
+
+.icone:hover{
+     color:rgb(63, 63, 217);
+     
+}
+
+
+.get-started-btn {
+  color: #e0e3eb;
+  border-radius: 14px;
+  padding: 7px 25px 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  border: 2px solid #f7f8fc;
+  position: absolute;
+  top:80%;
+  left:25%;
+  transform: translateY(-50%);
+
+}
+
+.get-started-btn:hover {
+  background: #edf3f2;
+  color: #73b0ec;
+}
+
+@media (max-width: 992px) {
+  .get-started-btn {
+    padding: 7px 20px 8px 20px;
+    margin-right: 15px;
+    margin-left: 15px; 
+  }
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 70px 50px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  height: 6cm;
+  width: 7cm;
+  position: relative;
+  top: 50px;
+  left: 450px;
+  z-index: 2;
+  box-sizing: border-box;
+  line-height: 80px
+  
+ 
+}
+
+
+
+.button1 {border-radius: 12px;}
+.button2 {border-radius: 12px;}
+.button3 {border-radius: 12px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 12px;}
+
+.button1 {
+  background-color: rgb(12, 11, 11);
+  color: rgb(242, 232, 232);
+  border: 2px solid #652b07; /* Green */
+  z-index: inherit;
+}
+.button2 {
+  background-color: rgb(13, 13, 13);
+  color: rgb(235, 227, 227);
+  border: 2px solid #652b07; /* Green */
+  z-index: inherit;
+}
+.button3 {
+  background-color: rgb(8, 8, 8);
+  color: rgb(233, 227, 227);
+  border: 2px solid #652b07; /* Green */
+  z-index: inherit;
+}
+.button4 {
+  background-color: rgb(11, 11, 11);
+  color: rgb(243, 239, 239);
+  border: 2px solid #d1621d; /* Green */
+  z-index: inherit;
+}
+.button5 {
+  background-color: rgb(11, 11, 11);
+  color: rgb(241, 237, 237);
+  border: 2px solid #d1621d; /* Green */
+  z-index: inherit;
+}
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #0b75aa; /* Blue */
+  color: rgb(10, 9, 9);
+}
+
+footer {
+  
+  padding: 15px,18px;
+  background-color: rgb(109, 117, 123);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0px;
+  width:100%;
+  height: 60px;
+  display: block; 
+  text-align: center;
+  clear:both;
+  z-index: -1;
+  
+            
+  
+}
+
+.search-box {
+    float: right;
+    position: fixed;
+    left: 33.5cm;
+    top:0.1cm
+}
+.search-box button {
+    height: 32px;
+    width: 32px;
+    margin-left: -5px;
+    background: LightGrey;
+    font-size: 17px;
+    border: none;
+    margin-top: -17px;
+    margin-right: 18px;
+    position: fixed;
+    left: 39cm;
+    top: 30px;
+}
+.search-box input[type=text] {
+    height: 26px;
+    font-size: 17px;
+    width: 200px;
+    margin-top: 14px;
+}
+
+#arjun {
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    width: 50%;
+    height: 90vh;
+    
+}
+
+        </style>
+    </head>
+    <body>
+
+        
+
+        <div class="wrapper">
+            <!--Top menu -->
+            <div class="sidebar">
+               <!--profile image & text-->
+               <div class="profile">
+                <img src="{% static 'assets/img/testimonials/Jane.jpg' %}" class="profile-image" alt="">
+                <h3>{{request.user.first_name}}</h3>
+                <p>{{a.post}}</p>
+                
+                <div ><a href="/profile" class="icone"><i class="fas fa-pen"></i></a></div>
+                <!-- <div class="text">Edit Profile</div> -->
+                
+                
+            </div>
+            <ul>
+                
+                <li>
+                    <a href="/grievence" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Grievence</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tour_planner">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Tour Programme</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/add_diary">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Case Diary</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/weekly-calendar">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">Weekly Diary</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/visitor">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Visitor's Book</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dutyview">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">View duty</span>
+
+                    </a>
+                </li>
+
+                <li>
+
+              <a href="/logout" ><span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">logout</span>
+
+                </li>
+                <!-- <li>
+                    <a href="/logout">
+                        <span class="icon"><i class="fas fa-user-shield"></i></span>
+                        <span class="item">Sign Out</span>
+                    </a>
+                </li> -->
+                <!-- <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">Settings</span>
+                    </a>
+                    
+                </li> -->
+               
+                
+                     
+            </ul>
+
+
+        </div> 
+           
+        
+
+        <div class="section">
+            <div class="top_navbar">
+                
+                
+
+                <div class="hamburger">
+                    <a href="#">
+                        
+                        <i class="fas fa-bars"></i>
+                    </a>
+                    <!-- <div class="search-box">
+                    <form action="search.php" method="get">
+                        <input type="text" name="search" maxlength="60" placeholder="Search..." required>
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    </div> -->
+                   
+                </div>
+            </div>
+
+        </div>
+                <!--menu item-->
+            </div>
+    
+        </div>
+
+        <div id="arjun" >
+            
+            <a type=button href="/userMap" class="button button1">HOTSPOT MAP</a>
+            <a type=link href="/fir"  class="button button2"> FIR</a>
+            <a type=button href="/web-scrapping/" class="button button3">ACCIDENT RATE</a>
+            <!-- <button class="button button4">lalalal</button>  -->
+            <a type=button href="/medrec" class="button button5">MEDICAL RECORDS</a> 
+            
+        </div>
+      
+        <footer>
+            <div id="footer">
+                <p>Author: NYPD<br>
+                  <a href="mailto:hege@example.com">nypd@gmail.com</a></p>
+            </div>
+            
+        </footer>
+
+        
+
+      <script>
+    var hamburger = document.querySelector(".hamburger");
+    let x=document.getElementById("arjun")
+    hamburger.addEventListener("click", function(){
+        document.querySelector("body").classList.toggle("active");
+    //    x.style.display="flex";
+    //    x.style.width="50%";
+    //    x.style.flexWrap="wrap";
+    //    document.querySelector(".button").style.width="300px";
+    })
+      </script>
+    </body>
+    </html>

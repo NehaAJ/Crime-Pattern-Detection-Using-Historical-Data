@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FIR Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .title {
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      margin-top: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .button {
+      text-align: center;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">FIR Form</div>
+    <center>{{msg}}</center>
+    <div class="content">
+      <form method="POST">
+        {% csrf_token %}
+        <label for="id_fname">Full Name:</label>
+        <input type="text" id="id_fname" name="fname" required>
+
+        <label for="id_age">Age:</label>
+        <input type="text" id="id_age" name="age" required>
+
+        <label for="id_occupation">Occupation:</label>
+        <input type="text" id="id_occupation" name="occupation" required>
+
+        <label for="id_residence">Residence:</label>
+        <input type="text" id="id_residence" name="residence" required>
+
+        <label for="id_casedes">Case Description:</label>
+        <textarea id="id_casedes" name="casedes" required></textarea>
+
+        <label for="id_date">Date:</label>
+        <input type="text" id="id_date" name="date" required>
+
+        <label for="id_time">Time:</label>
+        <input type="text" id="id_time" name="time" required>
+
+        <label for="id_location">Location of Crime:</label>
+        <input type="text" id="id_location" name="location" required>
+
+        <label for="id_typeofcrime">Type of Crime:</label>
+        <input type="text" id="id_typeofcrime" name="typeofcrime" required>
+
+
+
+        <div class="button">
+
+
+          <input type="submit" value="Register">
+        </div>
+      </form>
+
+    </div>
+  </div>
+</body>
+</html>

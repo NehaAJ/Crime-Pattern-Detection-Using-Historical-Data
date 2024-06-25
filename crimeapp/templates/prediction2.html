@@ -1,0 +1,149 @@
+<!-- prediction.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crime Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      /* Custom CSS styles */
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+
+      .warning {
+        color: red;
+        font-weight: bold;
+      }
+
+      .caution {
+        color: orange;
+        font-weight: bold;
+      }
+
+      .safe {
+        color: green;
+        font-weight: bold;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Safety Results</h1>
+
+      <form method="post" action="{% url 'crime-prediction2' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="place">Place:</label>
+          <input
+            type="text"
+            id="place"
+            name="place"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Your Template</title>
+          <style>
+            body {
+              background-color: #f2f2f2;
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 20px;
+            }
+
+            h1 {
+              color: #333;
+            }
+
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            th,
+            td {
+              border: 1px solid #ccc;
+              padding: 10px;
+              text-align: left;
+            }
+
+            th {
+              background-color: #eee;
+            }
+
+            .field-column {
+              background-color: #f9f9f9;
+              font-weight: bold;
+            }
+
+            .value-column {
+              background-color: #fff;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>After prediction</h1>
+          <table>
+            <tr>
+              <th class="field-column">Field</th>
+              <th class="value-column">Value</th>
+            </tr>
+            <tr>
+              <td class="field-column">Crimes In Total</td>
+              <td class="value-column">{{ a }}</td>
+            </tr>
+            <tr>
+              <td class="field-column">Safety Score</td>
+              <td class="value-column">{{ b}}</td>
+            </tr>
+            <tr>
+              <td class="field-column">Status</td>
+              <td class="value-column">{{ c }}</td>
+            </tr>
+          </table>
+        </body>
+      </html>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+      // Add your custom JavaScript code here
+    </script>
+  </body>
+</html>
